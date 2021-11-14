@@ -9,7 +9,7 @@
     <style>
     body {
         padding: 0px;
-        margin: 0 auto;
+        margin: 0px;
         font-family: 'Noto Sans', Arial, sans-serif;
         background-image: linear-gradient(to right, #0d19c5, grey);
         background-attachment: fixed;
@@ -95,6 +95,150 @@
     table tr > th {
         border: 1px solid black;
         border-radius: 10px;
+    }
+
+    @media (max-width: 425px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+        }
+    }
+
+    @media (min-width: 560px) and (max-width: 1024px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px auto;
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px auto;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px auto;
+            padding: 10px;
+        }
     }
     </style>
 </head>
