@@ -1,4 +1,317 @@
-<script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC Calculator</title>
+    <link rel="shortcut icon" href="favicon-imc.png" type="image/png">
+    <style>
+    body {
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Noto Sans', Arial, sans-serif;
+        background-image: linear-gradient(to right, #0d19c5, grey);
+        background-attachment: fixed;
+        color: white;
+        text-align: center;
+    }
+
+    h2 {
+        font-weight: 500;
+        color: black;
+    }
+
+    p {
+        color: white;
+    }
+
+    a {
+        color: #e7e7e7;
+    }
+
+    .dados {
+        background-color: #e7e7e7;
+        border-radius: 10px;
+        margin: 0px 300px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .dados > input#nome, input#altura, input#peso {
+        display: block;
+        margin: 10px 170px;
+        height: 20px;
+        width: 400px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        border-color: white;
+        border: 1px solid black;
+        font-size: 16px;
+        font-family: 'Noto Sans', Arial, sans-serif;
+    }
+
+    input.btn-submit {
+        background-color: #0d19c5;
+        color: white;
+        padding: 10px;
+        border: 1px solid #0d19c5;
+        font-family: 'Noto Sans', Arial, sans-serif;
+        font-size: medium;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .imc {
+        background-color: #e7e7e7;
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: justify;
+        margin: 10px 300px;
+    }
+
+    .imc > p {
+        color: black;
+    }
+
+    p#description {
+        color: white;
+        margin: 10px 0px;
+    }
+
+    table {
+        background-color: #e7e7e7;
+        color: black;
+        border-radius: 10px;
+        margin: 10px 500px;
+    }
+
+    table > tr {
+        margin: 5px 0px;
+    }
+
+    table tr > th {
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 425px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+        }
+    }
+
+    @media (min-width: 560px) and (max-width: 1024px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px auto;
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 425px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px 10px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        body {
+            background-image: linear-gradient(to bottom, #0d19c5, grey);
+            background-attachment: fixed;
+        }
+
+        .dados {
+            background-color: #e7e7e7;
+            border-radius: 10px;
+            margin: 0px auto;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .dados > input#nome, input#altura, input#peso {
+            display: block;
+            margin: 10px auto;
+            height: 20px;
+            width: 260px;
+            font-size: 16px;
+            font-family: 'Noto Sans', Arial, sans-serif;
+        }
+
+        .imc {
+            margin: 10px auto;
+        }
+
+        table {
+            background-color: #e7e7e7;
+            color: black;
+            border-radius: 10px;
+            margin: 10px auto;
+            padding: 10px;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <h1>IMC Calculator&copy;</h1>
+
+    <div class="dados">
+        <h2>Calcule seu IMC aqui!</h2>
+        <input type="text" id="nome" name="nome" placeholder="Nome da pessoa">
+        <input type="text" id="peso" name="peso" placeholder="Peso da pessoa">
+        <input type="text" id="altura" name="altura" placeholder="Altura da pessoa em centímetros (cm)">
+        <input type="submit" class="btn-submit" value="Calcular IMC" onclick="calcImc()">
+    </div>
+
+    <p id="description"></p>
+
+        <div class="imc">
+            <h2>O que é IMC?</h2>
+            <p>IMC é a sigla para Índice de Massa Corporal, um cálculo que serve para avaliar se a pessoa está dentro do seu peso ideal em relação à altura. Assim, de acordo com o valor do resultado de IMC, a pessoa pode saber se está dentro do peso ideal, acima ou abaixo do peso desejado.</p>
+
+            <p>Estar dentro do peso certo é importante porque estar acima ou abaixo desse peso pode influenciar bastante a saúde, aumentando o risco de doenças como desnutrição quando se está abaixo do peso, e AVC ou infarto, quando se está acima do peso. Assim, é comum os médicos, enfermeiros e nutricionistas avaliem o IMC da pessoa nas consultas de rotina para verificar a possibilidade de doenças que a pessoa pode estar pr´r-disposta.</p>
+            
+            <h2>Como calcular o IMC</h2>
+            <p>O cálculo do IMC é feito usando a seguinte fórmula matemática: Peso ÷ (altura x altura).</p>
+        </div>
+
+        <h1>Tabela de classificação</h1>
+
+        <table>
+            <tr>
+                <th>Resultado</th>
+                <th>Classificação</th>
+            </tr>
+            <tr>
+                <th>Abaixo de 16</th>
+                <th>Baixo peso muito grave</th>
+            </tr>
+            <tr>
+                <th>Entre 16 e 16,99</th>
+                <th>Baixo peso grave</th>
+            </tr>
+            <tr>
+                <th>Entre 17 e 18,49</th>
+                <th>Baixo peso</th>
+            </tr>
+            <tr>
+                <th>Entre 18,50 e 24,99</th>
+                <th>Peso normal</th>
+            </tr>
+            <tr>
+                <th>Entre 25 e 29,99</th>
+                <th>Sobrepeso</th>
+            </tr>
+            <tr>
+                <th>Entre 30 e 34,99</th>
+                <th>Obesidade grau I</th>
+            </tr>
+            <tr>
+                <th>Entre 35 e 39,99</th>
+                <th>Obesidade grau II</th>
+            </tr>
+            <tr>
+                <th>Acima de 40</th>
+                <th>Obesidade grau III</th>
+            </tr>
+        </table>
+
+        <h3>IMC Calculator &copy;</h3>
+
+        <p>Feito por <a href="https://gabrielsinformatica.github.io" target="_blank"><i>Gabriel Informática</i></a></p>
+
+    <script>
         function calcImc() {
         var nome = document.getElementById("nome").value
         var peso = document.getElementById("peso").value
@@ -59,3 +372,6 @@
     }
 
     </script>
+    
+</body>
+</html>
